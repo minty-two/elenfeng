@@ -1,4 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap");
+#home {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh; }
+  #home .main-content {
+    width: 100%;
+    max-width: 625px;
+    padding-right: 100px; }
+    #home .main-content > ul {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between; }
+      #home .main-content > ul i {
+        padding-right: 8px;
+        display: inline; }
+
 @media only screen and (min-width: 768px) {
   #gallery {
     display: flex;
@@ -89,6 +112,12 @@ body {
 main {
   padding: 100px; }
 
+h2.title {
+  font-size: 16px; }
+
+ul, li {
+  list-style-type: none; }
+
 img {
   display: block;
   width: 100%; }
@@ -164,16 +193,28 @@ sup {
   font-family: 'Montserrat', sans-serif; }
   .side-nav.is-active {
     transform: translateX(0); }
-  .side-nav ul, .side-nav li {
-    list-style-type: none; }
   .side-nav > ul > li {
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1; }
     .side-nav > ul > li:hover h2 {
       letter-spacing: 3px; }
+    .side-nav > ul > li a.is-active:before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 90%;
+      background: #000;
+      position: absolute;
+      z-index: 2;
+      left: -15px;
+      top: 0; }
     .side-nav > ul > li > ul {
       margin: 20px 0 0px 20px; }
       .side-nav > ul > li > ul > li {
-        margin-bottom: 20px; }
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1; }
         .side-nav > ul > li > ul > li a {
           display: inline-block; }
           .side-nav > ul > li > ul > li a:after {
@@ -210,3 +251,25 @@ sup {
   top: 40px;
   left: 40px;
   padding: 0; }
+
+#home {
+  text-align: left;
+  padding: 0;
+  padding-left: 400px;
+  padding-right: 200px; }
+  #home h1 {
+    margin: 45px 0 60px 0;
+    font-size: 50px; }
+  #home p {
+    font-size: 20px; }
+    #home p:not(:last-child) {
+      margin-bottom: 20px; }
+  #home ul {
+    padding-top: 40px; }
+  #home .fh-bgimg {
+    width: 600px;
+    height: 100%;
+    background-image: url("../img/home-cover.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }

@@ -21,6 +21,14 @@ body{
 main{
 	padding: 100px;
 }
+h2{
+	&.title{
+		font-size: 16px;
+	}
+}
+ul, li{
+	list-style-type: none;
+}
 img{
 	display: block;
 	width: 100%;
@@ -107,21 +115,37 @@ sup {
 	&.is-active{
 		transform: translateX(0);
 	}
-	ul, li{
-		list-style-type: none;
-	}
 	> ul{
 		> li{
 			margin-bottom: 50px;
+			position: relative;
+			z-index: 1;
 			&:hover{
 				h2{
 					letter-spacing: 3px;
 				}
 			}
+			a{
+				&.is-active{
+	          		&:before{
+	          			content: '';
+		            	display: block;
+		            	width: 6px;
+		            	height: 90%;
+		            	background: #000;
+		            	position: absolute;
+		            	z-index: 2;
+		            	left: -15px;
+		            	top: 0;
+	          		}
+	          	}
+			}
 			> ul{
 				margin: 20px 0 0px 20px;
 				> li{
 					margin-bottom: 20px;
+					position: relative;
+					z-index: 1;
 					a {
 			          	display: inline-block;
 			          	&:after {
@@ -171,4 +195,31 @@ sup {
 	top: 40px;
 	left: 40px;
 	padding: 0;
+}
+#home{
+	text-align: left;
+	padding: 0;
+	padding-left: 400px;
+	padding-right: 200px;
+	h1{
+		margin: 45px 0 60px 0;
+		font-size: 50px;
+	}
+	p{
+		font-size: 20px;
+		&:not(:last-child){
+			margin-bottom: 20px;
+		}
+	}
+	ul{
+		padding-top: 40px;
+	}
+	.fh-bgimg{
+		width: 600px;
+		height: 100%;
+		background-image: url('../img/home-cover.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
 }

@@ -38,7 +38,7 @@ $( document ).ready(function() {
 	function applySlideImgs(sel){
 		$(sel).each(function(index, el) {
 			index++;
-			var $img = 'img/portfolio/can-you-see-me-now/menswear/can_you_see_me_now_menswear_page-'+index+'.jpg'
+			var $img = '../img/portfolio/can-you-see-me-now/menswear/can_you_see_me_now_menswear_page-'+index+'.jpg'
 			$(this).append('<img src="'+$img+'" style="visibility: hidden;" />')
 			$(this).css('background-image', 'url("'+$img+'")');
 		});
