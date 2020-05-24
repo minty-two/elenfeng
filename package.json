@@ -1,0 +1,34 @@
+{
+  "name": "etf-education-campaign",
+  "version": "1.0.0",
+  "description": "[comment]: <> (Tips on styling markdown - https://www.makeareadme.com/)",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/twouk/etf-education-campaign.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/twouk/etf-education-campaign#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-cache": "^1.1.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-useref": "^3.1.6",
+    "gulp-util": "^3.0.8",
+    "run-sequence": "^2.2.1"
+  }
+}
