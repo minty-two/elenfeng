@@ -1,0 +1,225 @@
+header{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-end;
+	> *{
+		flex-basis: auto;
+	}
+	> h1{
+		flex-basis: 100%;
+	}
+}
+#home{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	.main-content{
+		> ul{
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			@media only screen and (max-width: $screen-sml){
+				flex-direction: column;
+				align-items: flex-start;
+			}
+		}
+	}
+}
+
+#gallery{
+	.scroll-item{
+		width: 100vw;
+		height: 100vh;
+		ul{
+			display: flex;
+			flex-direction: column;
+			li{
+			}
+			@media only screen and (min-width: $screen-med){
+				flex-direction: row;
+				justify-content: space-around;
+			}
+		}
+		@media only screen and (min-width: $screen-med){
+		flex-direction: row;
+		}
+	}
+	.scroll-item-container{
+		position: relative;
+		height: 100%;
+	}
+	.one-column{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		.bg-img{
+			height: 100%;
+			flex: 0 0 100%;
+		}
+	}
+	.two-column{
+		&.text-img{
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			align-items: center;
+			@media only screen and (min-width: $screen-med){
+			flex-direction: row;
+			}
+			.content{
+				flex: 0.5 1 50%;
+				margin: 5% 0 0 0;
+				@media only screen and (min-width: $screen-med){
+				margin: 0 0 0 5%;
+				}
+			}
+			.bg-img{
+				width: 100%;
+				flex: 0 0 85%;
+				height: 60%;
+				@media only screen and (min-width: $screen-med){
+				flex: 2 0 450px;
+				height: 100%;
+				}
+			}
+			&.wide-img{
+				.bg-img{
+					@media only screen and (min-width: $screen-med){
+						flex: 2 2 80%;
+					}
+				}
+				.content{
+					@media only screen and (min-width: $screen-med){
+						flex: 0.5 1 20%;
+					}
+				}
+			}
+			&.list-content{
+				flex-direction: column;
+				@media only screen and (min-width: $screen-lrg){
+					flex-direction: row;
+				}
+				.bg-img{
+					height: 80%;
+					background-size: cover;
+					flex-basis: 85%;
+					@media only screen and (min-width: $screen-lrg){
+						background-size: contain;
+						flex-basis: 450px
+					}
+					&.contain{
+						@media only screen and (min-width: $screen-lrg){
+						background-size: cover;
+						}
+					}
+				}
+				.content{
+					flex-basis: 15%;
+					width: 100%;
+					@media only screen and (min-width: $screen-lrg){
+						flex-basis: 50%;
+					}
+				}
+				&.reverse{
+					.bg-img{
+						order: 1;
+					}
+					.content{
+						order: 2;
+					}
+					@media only screen and (min-width: $screen-lrg){
+						.bg-img{
+							order: 2;
+						}
+						.content{
+							order: 1;
+						}
+					}
+					.bg-img{
+						background-size: contain;
+					}
+				}
+			}
+			&.reverse{
+				@media only screen and (min-width: $screen-med){
+					.bg-img{
+						order: 2;
+					}
+					.content{
+						order: 1;
+					}
+				}
+			}
+		}
+		&.img-img{
+			display: flex;
+			flex-direction: column;
+			height: 80%;
+			@media only screen and (min-width: $screen-lrg){
+				flex-direction: row;
+				height: 95%;
+			}
+			div{
+				width: 100%;
+				height: 100%;
+			}
+			:nth-child(1){
+				@media only screen and (min-width: $screen-med){
+					width: 40%;
+				}
+			}
+			:nth-child(2){
+				@media only screen and (min-width: $screen-med){
+					width: 60%;
+				}
+			}
+		}
+	}
+}
+#tile-container{
+	width: 100%;
+	height: 100%;
+	min-height: 88vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: stretch;
+	@media only screen and (min-width: $screen-lrg){
+	flex-direction: row;
+	min-height: 75vh;
+	}
+	li{
+		width: 100%;
+		display: flex;
+		flex: 1;
+		@media only screen and (min-width: $screen-lrg){
+			width: 390px;
+			height: auto;
+		}
+	}
+	a{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media only screen and (min-width: $screen-lrg){
+		height: 100%;
+		}
+		width: 100%;
+	}
+	&.two-column{
+		li{
+			flex: 1;
+			@media only screen and (min-width: $screen-lrg){
+			flex: 0 0 auto;
+			}
+		}
+	}
+}
