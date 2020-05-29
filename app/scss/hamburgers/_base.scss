@@ -18,37 +18,37 @@
   margin: 0;
   overflow: visible;
 
-  &:hover {
-    @if $hamburger-hover-use-filter == true {
-      filter: $hamburger-hover-filter;
-    }
-    @else {
-      opacity: $hamburger-hover-opacity;
-    }
-  }
+  // &:hover {
+  //   @if $hamburger-hover-use-filter == true {
+  //     filter: $hamburger-hover-filter;
+  //   }
+  //   @else {
+  //     opacity: $hamburger-hover-opacity;
+  //   }
+  // }
 
-  &.is-active {
-    &:hover {
-      @if $hamburger-hover-use-filter == true {
-        filter: $hamburger-active-hover-filter;
-      }
-      @else {
-        opacity: $hamburger-active-hover-opacity;
-      }
-    }
+  // &.is-active {
+  //   &:hover {
+  //     @if $hamburger-hover-use-filter == true {
+  //       filter: $hamburger-active-hover-filter;
+  //     }
+  //     @else {
+  //       opacity: $hamburger-active-hover-opacity;
+  //     }
+  //   }
 
-    .hamburger-inner,
-    .hamburger-inner::before,
-    .hamburger-inner::after {
-      background-color: $hamburger-active-layer-color;
-    }
-  }
+  //   .hamburger-inner,
+  //   .hamburger-inner::before,
+  //   .hamburger-inner::after {
+  //     background-color: $hamburger-active-layer-color;
+  //   }
+  // }
 }
 
 .hamburger-box {
   width: $hamburger-layer-width;
   height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
-  display: inline-block;
+  display: block;
   position: relative;
 }
 
