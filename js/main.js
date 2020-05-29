@@ -13,15 +13,6 @@ $( document ).ready(function() {
 	  }
 	});
 
-<<<<<<< HEAD:js/main.js
-	function applySlideImgs(sel){
-		$(sel).each(function(index, el) {
-			index++;
-			var $img = '../img/portfolio/can-you-see-me-now/menswear/can_you_see_me_now_menswear_page-'+index+'.jpg'
-			$(this).append('<img src="'+$img+'" style="visibility: hidden;" />')
-			$(this).css('background-image', 'url("'+$img+'")');
-		});
-=======
 	// END keyboard actions
 
 	// Generic functions
@@ -32,7 +23,6 @@ $( document ).ready(function() {
 			$(that).addClass('is-active')
 		} else{
 		}
->>>>>>> master:app/js/main.js
 	}
 
 });
