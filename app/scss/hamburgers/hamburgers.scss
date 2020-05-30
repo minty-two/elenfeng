@@ -20,6 +20,11 @@ $hamburger-hover-opacity       : 0.7 !default;
 $hamburger-active-layer-color  : $hamburger-layer-color !default;
 $hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
 
+
+$hamburger-layer-width-mobile         : 20px !default;
+$hamburger-layer-height-mobile        : 2px !default;
+$hamburger-layer-spacing-mobile       : 3px !default;
+
 // To use CSS filters as the hover effect instead of opacity,
 // set $hamburger-hover-use-filter as true and
 // change the value of $hamburger-hover-filter accordingly.
