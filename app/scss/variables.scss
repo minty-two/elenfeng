@@ -2,8 +2,20 @@ $dark: #000;
 $white: #fff;
 $purple: #344e41;
 $grey1: rgba(0,0,0,0.7);
+$grey2: rgba(0,0,0,0.2);
 
 
 $screen-lrg: 1199px;
 $screen-med: 650px;
 $screen-sml: 649px;
+
+$breakpoints: (
+    'phone':        400px,
+    'phone-wide':   480px,
+    'phablet':      560px,
+    'tablet-small': 640px,
+    'tablet':       649px,
+    'tablet-wide':  1024px,
+    'desktop':      650px,
+    'desktop-wide': 1199px
+);

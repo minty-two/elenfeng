@@ -1,16 +1,4 @@
-header{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: flex-end;
-	> *{
-		flex-basis: auto;
-	}
-	> h1{
-		flex-basis: 100%;
-	}
-}
+
 #home{
 	display: flex;
 	flex-direction: row;
@@ -25,7 +13,7 @@ header{
 			flex-wrap: wrap;
 			align-items: center;
 			justify-content: space-between;
-			@media only screen and (max-width: $screen-sml){
+			@include mq(desktop, max){
 				flex-direction: column;
 				align-items: flex-start;
 			}
@@ -37,18 +25,29 @@ header{
 	.scroll-item{
 		width: 100vw;
 		height: 100vh;
+		padding: 50px 20px 20px 30px;
+		@include mq(desktop-wide, min){
+			padding: 100px;
+		}
+		@include mq(desktop, min){
+		flex-direction: row;
+		}
 		ul{
 			display: flex;
 			flex-direction: column;
 			li{
+				margin: 5px 0;
 			}
-			@media only screen and (min-width: $screen-med){
+			@include mq(desktop, min){
 				flex-direction: row;
 				justify-content: space-around;
+				margin: 10px 0;
 			}
 		}
-		@media only screen and (min-width: $screen-med){
-		flex-direction: row;
+		&.full-height{
+			@include mq(desktop-wide, min){
+			padding: 0 100px;
+			}
 		}
 	}
 	.scroll-item-container{
@@ -71,52 +70,52 @@ header{
 			flex-direction: column;
 			flex-wrap: nowrap;
 			align-items: center;
-			@media only screen and (min-width: $screen-med){
+			@include mq(desktop, min){
 			flex-direction: row;
 			}
 			.content{
 				flex: 0.5 1 50%;
 				margin: 5% 0 0 0;
-				@media only screen and (min-width: $screen-med){
+				@include mq(desktop, min){
 				margin: 0 0 0 5%;
 				}
 			}
 			.bg-img{
 				width: 100%;
-				flex: 0 0 85%;
+				flex: 0 0 80%;
 				height: 60%;
-				@media only screen and (min-width: $screen-med){
+				@include mq(desktop, min){
 				flex: 2 0 450px;
 				height: 100%;
 				}
 			}
 			&.wide-img{
 				.bg-img{
-					@media only screen and (min-width: $screen-med){
+					@include mq(desktop, min){
 						flex: 2 2 80%;
 					}
 				}
 				.content{
-					@media only screen and (min-width: $screen-med){
+					@include mq(desktop, min){
 						flex: 0.5 1 20%;
 					}
 				}
 			}
 			&.list-content{
 				flex-direction: column;
-				@media only screen and (min-width: $screen-lrg){
+				@include mq(desktop-wide, min){
 					flex-direction: row;
 				}
 				.bg-img{
 					height: 80%;
 					background-size: cover;
 					flex-basis: 85%;
-					@media only screen and (min-width: $screen-lrg){
+					@include mq(desktop-wide, min){
 						background-size: contain;
 						flex-basis: 450px
 					}
 					&.contain{
-						@media only screen and (min-width: $screen-lrg){
+						@include mq(desktop-wide, min){
 						background-size: cover;
 						}
 					}
@@ -124,7 +123,7 @@ header{
 				.content{
 					flex-basis: 15%;
 					width: 100%;
-					@media only screen and (min-width: $screen-lrg){
+					@include mq(desktop-wide, min){
 						flex-basis: 50%;
 					}
 				}
@@ -135,7 +134,7 @@ header{
 					.content{
 						order: 2;
 					}
-					@media only screen and (min-width: $screen-lrg){
+					@include mq(desktop-wide, min){
 						.bg-img{
 							order: 2;
 						}
@@ -149,7 +148,7 @@ header{
 				}
 			}
 			&.reverse{
-				@media only screen and (min-width: $screen-med){
+				@include mq(desktop, min){
 					.bg-img{
 						order: 2;
 					}
@@ -163,7 +162,7 @@ header{
 			display: flex;
 			flex-direction: column;
 			height: 80%;
-			@media only screen and (min-width: $screen-lrg){
+			@include mq(desktop-wide, min){
 				flex-direction: row;
 				height: 95%;
 			}
@@ -172,12 +171,12 @@ header{
 				height: 100%;
 			}
 			:nth-child(1){
-				@media only screen and (min-width: $screen-med){
+				@include mq(desktop, min){
 					width: 40%;
 				}
 			}
 			:nth-child(2){
-				@media only screen and (min-width: $screen-med){
+				@include mq(desktop, min){
 					width: 60%;
 				}
 			}
@@ -190,9 +189,9 @@ header{
 	min-height: 88vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: stretch;
-	@media only screen and (min-width: $screen-lrg){
+	@include mq(desktop-wide, min){
 	flex-direction: row;
 	min-height: 75vh;
 	}
@@ -200,7 +199,7 @@ header{
 		width: 100%;
 		display: flex;
 		flex: 1;
-		@media only screen and (min-width: $screen-lrg){
+		@include mq(desktop-wide, min){
 			width: 390px;
 			height: auto;
 		}
@@ -209,7 +208,7 @@ header{
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		@media only screen and (min-width: $screen-lrg){
+		@include mq(desktop-wide, min){
 		height: 100%;
 		}
 		width: 100%;
@@ -217,9 +216,102 @@ header{
 	&.two-column{
 		li{
 			flex: 1;
-			@media only screen and (min-width: $screen-lrg){
+			@include mq(desktop-wide, min){
 			flex: 0 0 auto;
 			}
 		}
+	}
+}
+
+.slider-page{
+	section{
+		position: relative;
+		z-index: 1;
+		&.main-slider{
+			width: 100%;
+			height: 100%;
+			.slick-slide{
+				width: auto;
+				height: 90%;
+			}
+			img{
+				width: 100%;
+				height: auto;
+				margin: 0 auto;
+				@include mq(desktop, min){
+				width: 70%;
+				}
+			}
+		}
+	}
+}
+.slider-controller{
+	position: absolute;
+	z-index: 3;
+	width: 100%;
+	top: 105%;
+	display: flex;
+	justify-content: center;
+	@include mq(desktop, min){
+	justify-content: space-between;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	}
+	> div{
+		margin: 0 15px;
+	}
+}
+#scrollControl{
+	position: fixed;
+	z-index: 1;
+	top: 200px;
+	left: 10px;
+	width: 6px;
+	text-align: center;
+	@include mq(desktop-wide, min){
+		left: 40px;
+	}
+	&:after{
+		content: '';
+		width: 2px;
+		height: 98%;
+		background-color: $dark;
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		left: 50%;
+		@extend .center-both;
+	}
+	ul{
+		width: 6px;
+		height: 100%;
+	}
+	li{
+		position: relative;
+		z-index: 2;
+		display: block;
+		&:not(:last-child){
+			margin-bottom: 50px;
+		}
+		&:hover{
+			color: $white;
+		}
+	}
+	.side-nav-item{
+		width: 6px;
+		height: 6px;
+		background-color: $dark;
+	}
+	.animate{
+		@extend .side-nav-item;
+		-webkit-transform: translateX(-50%) scale(2);
+		transform: translateX(-50%) scale(2);
+		transform-origin: center center;
+		left: 50%;
+		background-color: $dark;
+		position: absolute;
+		z-index: 1;
+		text-align: center;
 	}
 }
